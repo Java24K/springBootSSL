@@ -36,13 +36,13 @@ public class HelloWorldController {
      * @return
      */
     private boolean checkLogin(String userName, String certStr){
-    	boolean flag = true;
+    	boolean flag = false;
     	// 从证书得到用户id
     	String userId = BASE64Decode.decodeCert(certStr);
     	// 根据用户id 查询数据库得到 用户名 这里假设得到的是 zhoufeng@iqanjin.com
 		String userNameByUserId = "zhoufeng@iqanjin.com";
 		if(!userName.equals(userNameByUserId)){
-			flag = false;
+			flag = true;
 		}
     	return flag;
     }
